@@ -32,15 +32,43 @@
 #       - "3307:3306"  # Expose MySQL on port 3307
 
 
+# version: '3.8'
+
+# services:
+#   db:
+#     image: mysql:5.7
+#     container_name: mygardenapp-db-1
+#     environment:
+#       MYSQL_ROOT_PASSWORD: yourpassword
+#       MYSQL_DATABASE: GardenShop
+#     volumes:
+#       - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Mount init.sql to initialize DB
+#     ports:
+#       - "3307:3306"  # Exposing MySQL port
+
+#   web:
+#     build: .
+#     container_name: mygardenapp-web-1
+#     ports:
+#       - "8080:80"  # Exposing the web server (Apache with PHP)
+#     volumes:
+#       - .:/var/www/html  # Mounting project directory to Apache's web folder
+#     depends_on:
+#       - db  # Ensure DB is started before the web service
+#     environment:
+#       MYSQL_HOST: db  # Use 'db' as the hostname (the name of the db service)
+
 version: '3.8'
 
 services:
   db:
     image: mysql:5.7
     container_name: mygardenapp-db-1
+    env_file:
+      - .env  # Load environment variables from the .env file
     environment:
-      MYSQL_ROOT_PASSWORD: yourpassword
-      MYSQL_DATABASE: GardenShop
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Mount init.sql to initialize DB
     ports:
@@ -55,5 +83,7 @@ services:
       - .:/var/www/html  # Mounting project directory to Apache's web folder
     depends_on:
       - db  # Ensure DB is started before the web service
+    env_file:
+      - .env  # Load environment variables for the web service
     environment:
-      MYSQL_HOST: db  # Use 'db' as the hostname (the name of the db service)
+      MYSQL_HOST: ${DB_HOST}  # Use the value of DB_HOST from the .env file
