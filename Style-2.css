@@ -1,0 +1,156 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto; 
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.logo-img {
+    width: 100px;
+    height: 60px;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navigation ul li {
+    margin: 0 15px;
+}
+
+.navigation ul li a {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #000700;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.about-content {
+    display: flex;
+    width: 100%;
+}
+
+.about-left {
+    width: 40%;
+}
+
+.about-right {
+    width: 55%;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 80%; 
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+
+.skills {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.skill-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 16px;
+}
+
+.contact {
+    padding: 50px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
